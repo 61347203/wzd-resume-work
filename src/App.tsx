@@ -9,6 +9,8 @@ import {
 } from "./data";
 import type { Project } from "./types";
 
+const publicAsset = (path: string) => `${import.meta.env.BASE_URL}${path}`;
+
 const Icon = ({ name }: { name: "arrow" | "download" | "mail" | "spark" }) => {
   const paths = {
     arrow: <path d="M5 12h14M13 6l6 6-6 6" />,
@@ -812,7 +814,7 @@ export default function App() {
     <div className="app-shell">
       <header className="floating-nav">
         <a className="identity" href="#top" aria-label="返回首页">
-          <img src="/portrait.png" alt="" />
+          <img src={publicAsset("portrait.png")} alt="" />
           <span><b>吴政达</b><small>{profile.role}</small></span>
         </a>
         <nav aria-label="页面导航">
@@ -838,7 +840,7 @@ export default function App() {
               <div className="intro-actions">
                 <a className="ios-button primary" href="#work">浏览我的工作 <Icon name="arrow" /></a>
                 <a className="ios-button ghost" href="#lab">查看互动演示 <Icon name="arrow" /></a>
-                <a className="ios-button ghost" href="/resume.pdf" download><Icon name="download" /> PDF 简历</a>
+                <a className="ios-button ghost" href={publicAsset("resume.pdf")} download><Icon name="download" /> PDF 简历</a>
               </div>
             </div>
 
@@ -904,7 +906,7 @@ export default function App() {
           <div className="recognition-grid">
             <article className="recognition-card landscape">
               <div className="recognition-image">
-                <img src="/evidence/digital-brainstorm-award.jpg" alt="财服数字化头脑风暴活动一等奖荣誉证书，激励金额已遮挡" loading="lazy" />
+                <img src={publicAsset("evidence/digital-brainstorm-award.jpg")} alt="财服数字化头脑风暴活动一等奖荣誉证书，激励金额已遮挡" loading="lazy" />
                 <span>企业内部活动 · 金额已脱敏</span>
               </div>
               <div className="recognition-copy">
@@ -916,7 +918,7 @@ export default function App() {
             </article>
             <article className="recognition-card portrait">
               <div className="recognition-image">
-                <img src="/evidence/digital-builder-award-blurred.jpg" alt="2025年度数字化筑梦师企业内部荣誉奖杯，企业标识已适度虚化" loading="lazy" />
+                <img src={publicAsset("evidence/digital-builder-award-blurred.jpg")} alt="2025年度数字化筑梦师企业内部荣誉奖杯，企业标识已适度虚化" loading="lazy" />
                 <span>2025 年度内部荣誉</span>
               </div>
               <div className="recognition-copy">
