@@ -1,0 +1,10 @@
+node_modules/
+dist/
+tmp/
+*.tsbuildinfo
+vite.config.js
+vite.config.d.ts
+.DS_Store
+工作成果素材/
+简历/
+自动化工具/
